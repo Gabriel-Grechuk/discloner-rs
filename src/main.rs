@@ -1,12 +1,9 @@
-// Running a "hello world" and checking the LSP.
+use clap::Parser;
+use config::args;
 
-fn say_hello() -> u16 {
-    println!("hello, world!");
-
-    10
-}
+pub mod config;
 
 fn main() {
-    let hey = say_hello();
-    println!("Hey is {hey}!");
+    let config = args::Cli::parse();
+    println!("{:#?}", config);
 }
